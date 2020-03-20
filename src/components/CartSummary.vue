@@ -14,11 +14,7 @@
             props:['ecomerce','winning','mentoring','road','tailor','prepare'],
             computed:{
                 list(){
-<<<<<<< HEAD
                     return this.$store.state.cardProducts
-=======
-                    return this.$store.state.CardProducts
->>>>>>> 268ae8fe766d6b312a10fc7f4e8b048a4dfa836a
                 }
             }
         }

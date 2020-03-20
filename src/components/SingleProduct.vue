@@ -17,11 +17,7 @@
                 return this.product.id
             },
             AddProduct(){
-<<<<<<< HEAD
                 this.$store.commit('AddProductToCard', this.product.id)
-=======
-                this.$store.commit('AddProductToCard')
->>>>>>> 268ae8fe766d6b312a10fc7f4e8b048a4dfa836a
             },
         },
 

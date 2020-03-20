@@ -10,11 +10,7 @@
     export default{
         computed:{
             products(){
-<<<<<<< HEAD
                 return this.$store.getters.getProducts
-=======
-                return this.$store.getters.GetProducts
->>>>>>> 268ae8fe766d6b312a10fc7f4e8b048a4dfa836a
             }
         },
         components:{
