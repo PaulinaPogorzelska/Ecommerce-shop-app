@@ -8,27 +8,18 @@
                 <p>{{product.counter}}x {{product.name}} {{(product.price*product.counter).toFixed(2)}}</p>
             </div>
         </div>
-        <p>Total price: {{summaryPrice()}}</p>
+        <p>Total price: {{summaryPrice}}</p>
 </div>
 </template>
 
 <script>
         import {mapGetters} from 'vuex';
         export default {
-            
-            methods:{
-                summaryPrice(){
-                let priceOfPorducts=[];
-                let summaryPrice=0;
-                this.getCardProducts.forEach(item => {priceOfPorducts.push(item.price*item.counter)} );
-                for( let i=0; i<priceOfPorducts.length; i++){
-                    summaryPrice += priceOfPorducts[i]
-                }
-                return summaryPrice.toFixed(2)
-                }
-            },
             computed:{
-                ...mapGetters(['getCardProducts'])
+                ...mapGetters(['getCardProducts']),
+                summaryPrice(){
+                    return this.getCardProducts.reduce((a,b)=> a + b.price, 0)
+                }
             },
         }
 </script>

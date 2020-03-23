@@ -20,13 +20,14 @@ export const store = new Vuex.Store({
         addProductToCard(state, productId) {
             let product = state.cardProducts.find(el => el.id == productId);
             if (!!product) {
-                product.counter++
+                let editProduct = { ...product };
+                editProduct.counter++;
+                state.cardProducts = [...state.cardProducts.filter(el => el.id != productId), editProduct]
             } else {
                 let newProduct = state.products.find(el => el.id == productId);
-                state.cardProducts.push(newProduct);
                 newProduct.counter = 1;
+                state.cardProducts.push(newProduct);
             }
-
         }
     }
 })
