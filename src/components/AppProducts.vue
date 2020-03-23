@@ -1,17 +1,16 @@
 <template>
 <div class="products">
-        <ProductItem v-for="product in products" :product="product"></ProductItem>
+        <ProductItem v-for="(product,key) in getProducts" :key="key" :product="product"></ProductItem>
 </div>
 </template>
 
 <script>
     import ProductItem from './SingleProduct.vue'
+    import {mapGetters} from 'vuex';
 
     export default{
         computed:{
-            products(){
-                return this.$store.getters.getProducts
-            }
+            ...mapGetters(['getProducts'])
         },
         components:{
             ProductItem

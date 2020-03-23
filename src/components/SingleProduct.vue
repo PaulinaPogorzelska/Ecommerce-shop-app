@@ -3,8 +3,8 @@
         <div><img src="../assets/product123.png"></div>
         <div class="description">
             <h3>{{product.name}}</h3>
-            <p>{{product.price}}</p>
-            <button @click="AddProduct" :id="ShowId()">Add</button>
+            <p>{{product.price.toFixed(2)}}</p>
+            <button @click="addProduct">Add</button>
         </div>
 </div>
 </template>
@@ -13,11 +13,9 @@
     export default{
         props:['product'],
         methods:{
-            ShowId(){
-                return this.product.id
-            },
-            AddProduct(){
-                this.$store.commit('AddProductToCard', this.product.id)
+
+            addProduct(){
+                this.$store.commit('addProductToCard', this.product.id)
             },
         },
 

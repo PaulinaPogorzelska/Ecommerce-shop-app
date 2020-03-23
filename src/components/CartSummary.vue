@@ -1,41 +1,55 @@
 <template>
 <div class="wrap">
         <h2><i class="far fa-address-book"></i> Contact</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde provident facilis rerum harum consequatur eveniet qui labore debitis at similique.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde provident facilis rerum harum consequatur eveniet qui.</p>
         <h2><i class="fas fa-cart-plus"></i> Cart</h2>
-        <div>
-            <p>{{list}}</p>
+        <div class="card">
+            <div v-for="(product,key) in getCardProducts" :key="key">
+                <p>{{product.counter}}x {{product.name}} {{(product.price*product.counter).toFixed(2)}}</p>
+            </div>
         </div>
+        <p>Total price: {{summaryPrice()}}</p>
 </div>
 </template>
 
 <script>
-        export default{
-            props:['ecomerce','winning','mentoring','road','tailor','prepare'],
-            computed:{
-                list(){
-                    return this.$store.state.cardProducts
+        import {mapGetters} from 'vuex';
+        export default {
+            
+            methods:{
+                summaryPrice(){
+                let priceOfPorducts=[];
+                let summaryPrice=0;
+                this.getCardProducts.forEach(item => {priceOfPorducts.push(item.price*item.counter)} );
+                for( let i=0; i<priceOfPorducts.length; i++){
+                    summaryPrice += priceOfPorducts[i]
                 }
-            }
+                return summaryPrice.toFixed(2)
+                }
+            },
+            computed:{
+                ...mapGetters(['getCardProducts'])
+            },
         }
 </script>
 
 <style scoped>
     .wrap{
-        display:flex;
-        flex-direction:column;
         color:white;
         font-family: 'Lato', sans-serif;
-        width:250px;
-        height:380px;
+        display:flex;
+        flex-direction:column;
+        height:440px;
+        width:280px;
         background-color:#164fac;
         padding:20px;
     }
 
-    .wrap div{
+    .wrap .card{
         margin:auto;
-        width:220px;
-        height:180px;
+        min-width:250px;
+        max-width:270px;
+        min-height:230px;
         border:2px dashed white;
         margin-top:10px;
     }
