@@ -20,11 +20,16 @@
 
 <style scoped>
     .products{
-        flex-basis:70%;
         height:calc(100vh - 111px);
         display:flex;
         flex-wrap:wrap;
         justify-content: space-around;
         align-items: space-between;
     }
+        @media(max-width:1000px) and (min-height:1000px){
+        .products{
+            min-height:105vh;
+            margin-top:121px;
+        }
+        }
 </style>
