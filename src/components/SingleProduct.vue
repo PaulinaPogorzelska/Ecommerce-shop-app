@@ -20,7 +20,7 @@
             addProduct(){
                 this.$store.commit('addProductToCard', this.product.id)
                 this.$store.commit('showCardMobile')
-            },
+            }
         },
 
     }

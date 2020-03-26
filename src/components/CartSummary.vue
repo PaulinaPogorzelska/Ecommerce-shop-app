@@ -5,11 +5,12 @@
         <h2><i class="fas fa-cart-plus"></i> Cart</h2>
         <div class="card">
             <div v-for="(product,key) in getCardProducts" :key="key">
-                <p>{{product.counter}}x {{product.name}} {{(product.price*product.counter).toFixed(2)}}</p>
+                <p>{{product.counter}}x {{product.name}} {{(product.price*product.counter).toFixed(2)}}
+                <i class="fas fa-plus-square" @click="product.counter++"></i><i class="fas fa-minus-square" @click="product.counter--"></i></p>
             </div>
         </div>
         <p>Total price: {{summaryPrice}}</p>
-        <button @click="hideCard">Continue shopping</button>
+        <button @click="hideCard" class="continueShopping">Continue shopping</button>
 </div>
 </template>
 
@@ -20,7 +21,7 @@
                 ...mapGetters(['getCardProducts']),
                 summaryPrice(){
                     return this.getCardProducts.reduce((a,b)=> a + b.counter*b.price, 0).toFixed(2)
-                }
+                },
             },
             methods:{
             hideCard(){
@@ -54,12 +55,19 @@
         margin:10px;
     }
 
-    button{
+    p button{
+        width:20px;
+        height:20px;
+        font-size:15px;
+        line-height:20px;
+    }
+
+    .continueShopping{
         display:none;
     }
 
     @media(max-width:1000px){
-        button{
+        .continueShopping{
         color:white;
         font-size:35px;
         display:block;
@@ -104,7 +112,7 @@
             margin-top:20px;
         }
 
-        button{
+        .continueShopping{
             font-size:17px;
             padding:10px 20px;
             border:1px solid darkgrey;
