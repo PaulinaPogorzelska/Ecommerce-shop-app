@@ -1,5 +1,5 @@
 <template>
-<div class="wrap">
+<div class="wrapNav">
     <div class="logo bigger">
         <p>LOGO</p>
     </div>
@@ -18,7 +18,7 @@
 
 <style scoped>
 
-    div.wrap{
+    .wrapNav{
         font-family: 'Oswald', sans-serif;
         display:flex;
         justify-content:flex-end;
@@ -26,18 +26,18 @@
         border-bottom: 1px solid grey;
     }
 
-    div.logo{
+    .logo{
         flex-basis:30%;
     }
 
-    div.logo p{
+    .logo p{
         font-family: 'Lato', sans-serif;
         font-size:30px;
         line-height:90px;
         margin-left: 15%;
     }
 
-    div.nav{
+    .nav{
         flex-basis:70%;
         display:flex;
         justify-content:flex-end;
@@ -58,7 +58,7 @@
     }
 
     @media(max-width:1000px) and (min-height:1000px){
-        div.wrap{
+        .wrapNav{
             position:fixed;
             z-index:1;
             top:0;
@@ -67,7 +67,7 @@
             height:120px;
             background-color:white;
         }
-        div.logo p,
+        .logo p,
         .button{
             line-height:120px;
         }
@@ -86,7 +86,7 @@
     }
 
     @media(min-width:1024px) and (min-height:1366px){
-        .wrap{
+        .wrapNav{
             font-size:25px;
         }
 

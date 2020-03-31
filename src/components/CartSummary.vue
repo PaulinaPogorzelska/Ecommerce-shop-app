@@ -1,5 +1,5 @@
 <template>
-<div class="wrap">
+<div class="wrapCard">
         <h2><i class="far fa-address-book"></i> Contact</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde provident facilis rerum harum consequatur eveniet qui.</p>
         <h2><i class="fas fa-cart-plus"></i> Cart</h2>
@@ -32,7 +32,7 @@
 </script>
 
 <style scoped>
-    .wrap{
+    .wrapCard{
         color:white;
         font-family: 'Lato', sans-serif;
         display:flex;
@@ -43,7 +43,7 @@
         padding:20px;
     }
 
-    .wrap .card{
+    .wrapCard .card{
         margin:auto;
         width:260px;
         height:230px;
@@ -51,11 +51,11 @@
         margin-top:10px;
     }
 
-    p{
+    .wrapCard p{
         margin:10px;
     }
 
-    p button{
+    .wrapCard p button{
         width:20px;
         height:20px;
         font-size:15px;
@@ -81,32 +81,32 @@
     }
 
     @media(max-width:1000px) and (min-height:1000px){
-        .wrap{
+        .wrapCard{
             width:800px;
             height:1000px;
             padding:40px;
         }
-        .wrap .card{
+        .wrapCard .card{
             height:500px;
             width:700px;
             margin-top:30px;
         }
 
-        h2{
+        .wrapCard h2{
             font-size:50px;
         }
-        p{
+        .wrapCard p{
             font-size:35px;
             margin:25px;
         }
     }
     @media(max-width:1000px) and (max-height:1000px){
-        .wrap{
+        .wrapCard{
             width:400px;
             height:500px;
             padding:30px;
         }
-        .wrap .card{
+        .wrapCard .card{
             height:300px;
             width:300px;
             margin-top:20px;
@@ -122,13 +122,13 @@
     }
 
      @media(min-width:1024px) and (min-height:1366px){
-            .wrap{
+            .wrapCard{
             width:380px;
             height:600px;
             padding:15px;
             }
 
-            .wrap .card{
+            .wrapCard .card{
             height:300px;
             width:340px;
             margin-top:20px;
@@ -138,11 +138,11 @@
             margin:15px 10px;
             }
 
-            h2{
+            .wrapCard h2{
             font-size:25px;
             }
 
-            p{
+            .wrapCard p{
             font-size:21px;
             margin:20px 10px;
             }

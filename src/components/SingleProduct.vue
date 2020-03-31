@@ -1,7 +1,7 @@
 <template>
-<div class="wrap">
-        <div class="image"><img src="../assets/product123.png"></div>
-        <div class="description">
+<div class="wrapItem">
+        <div class="imageItem"><img src="../assets/product123.png"></div>
+        <div class="descriptionItem">
             <h3>{{product.name}}</h3>
             <p>{{product.price.toFixed(2)}}</p>
             <button @click="addProduct">Add</button>
@@ -10,12 +10,8 @@
 </template>
 
 <script>
-    import {mapGetters} from 'vuex';
     export default{
         props:['product'],
-        computed:{
-        ...mapGetters(['getCardActive','getshowCardMobile'])
-        },
         methods:{
             addProduct(){
                 this.$store.commit('addProductToCard', this.product.id)
@@ -28,47 +24,40 @@
 
 <style scoped>
 
-    .wrap{
+    .wrapItem{
         color:black;
         display:flex;
         flex-direction:column;
         font-family: 'Lato', sans-serif;
-    }
-
-    .image{
         margin:0 30px;
     }
 
-    img{
+    .imageItem img{
         width:240px;
         height:240px;
         display:block;
     }
 
-    .wrap div+div{
+    .descriptionItem{
+        position:relative;
         width:240px;
         height:80px;
-        margin:0 30px;
         background-color:whitesmoke;
     }
 
-    .description{
-        position:relative
-    }
-
-    h3{
+    .descriptionItem h3{
         position:absolute;
         top:10px;
         left:10px;
     }
 
-    p{
+    .descriptionItem p{
         position:absolute;
         top:30px;
         left:10px;
     }
 
-    button{
+    .descriptionItem button{
         position:absolute;
         bottom:10px;
         right:10px;
@@ -78,58 +67,62 @@
     }
 
     @media(max-width:1000px) and (min-height:1000px){
-        .wrap{
+        .wrapItem{
             font-size:30px;
             width:50%;
-            height:calc(50vw + 150px)
+            height:calc(50vw + 150px);
+            margin:0;
         }
-        .image{
+        .imageItem {
             width:80%;
             height:calc(0.8 * 50vw);
             margin:0 auto;
         }
-        img{
+        .imageItem img{
             width:100%;
             height:100%;
         }
-        .wrap div+div{
+        .descriptionItem{
             width:80%;
             height:150px;
             margin:0 auto;
         }
 
-        p{
-        top:60px;
+        .descriptionItem p{
+            top:60px;
         }
 
-        button{
+        .descriptionItem button{
             font-size:30px;
             padding:15px 60px;
         }
         }
 
     @media(min-width:1024px) and (min-height:1366px){
-        .wrap{
+        .wrapItem{
             font-size:22px;
             width:50%;
-        }
-        img{
-            width:290px;
-            height:290px;
+            margin:0;
         }
 
-        .wrap div+div{
+        .imageItem img{
+            width:290px;
+            height:290px;
+            margin:0 auto;
+        }
+
+        .descriptionItem{
             width:290px;
             height:110px;
             margin:0 auto;
         }
 
-        button{
+        .descriptionItem button{
             font-size:20px;
             padding:10px 50px;
         }
 
-        p{
+        .descriptionItem p{
         top:40px;
         }
     }

@@ -7,6 +7,7 @@
         <CartSummary v-if="viewCard"></CartSummary>
     </div>
         <AppProducts class="productsInHome"></AppProducts>
+
 </div>
 </template>
 
