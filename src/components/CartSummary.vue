@@ -75,7 +75,7 @@
         bottom:30px;
         right:50px;
         padding:20px 40px;
-        background-color:#053dac;;
+        background-color:#053dac;
         border:3px solid darkgrey;
         }
     }
