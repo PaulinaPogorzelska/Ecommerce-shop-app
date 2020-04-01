@@ -6,7 +6,7 @@
         <div class="card">
             <div v-for="(product,key) in getCardProducts" :key="key">
                 <p>{{product.counter}}x {{product.name}} {{(product.price*product.counter).toFixed(2)}}
-                <i class="fas fa-plus-square" @click="product.counter++"></i><i class="fas fa-minus-square" @click="product.counter--"></i></p>
+                <i class="fas fa-plus-square" @click="incrementCounter(product.id)"></i><i class="fas fa-minus-square" @click="decrementCounter(product.id)"></i></p>
             </div>
         </div>
         <p>Total price: {{summaryPrice}}</p>
@@ -26,7 +26,13 @@
             methods:{
             hideCard(){
                 this.$store.commit('hideCardMobile')
-                }
+            },
+            decrementCounter(productId){
+                this.$store.commit('decrementProductCounter',productId)
+            },
+            incrementCounter(productId){
+                this.$store.commit('incrementProductCounter',productId)
+            },
             }
         }
 </script>

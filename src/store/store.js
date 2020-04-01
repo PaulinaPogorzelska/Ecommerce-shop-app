@@ -26,7 +26,6 @@ export const store = new Vuex.Store({
             let product = state.cardProducts.find(el => el.id == productId);
             if (!!product) {
                 product.counter++;
-                //state.cardProducts = [...state.cardProducts.filter(el => el.id != productId), product]
             } else {
                 let newProduct = state.products.find(el => el.id == productId);
                 newProduct.counter = 1;
@@ -39,6 +38,19 @@ export const store = new Vuex.Store({
         },
         hideCardMobile(state) {
             state.ifShowCardMobile = false
+        },
+        decrementProductCounter(state, productId) {
+            let product = state.cardProducts.find(el => el.id == productId);
+            if (product.counter > 1) {
+                product.counter--
+            } else {
+                let index = state.cardProducts.indexOf(product)
+                state.cardProducts.splice(index, 1)
+            }
+        },
+        incrementProductCounter(state, productId) {
+            let product = state.cardProducts.find(el => el.id == productId);
+            product.counter++
         }
     }
 })
