@@ -4,7 +4,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde provident facilis rerum harum consequatur eveniet qui.</p>
         <h2><i class="fas fa-cart-plus"></i> Cart</h2>
         <div class="card">
-            <div v-for="(product,key) in getCardProducts" :key="key">
+            <div v-for="(product,key) in getCardProducts" :key="key" class="singleProduct">
                 <p>{{product.counter}}x {{product.name}} {{(product.price*product.counter).toFixed(2)}}
                 <i class="fas fa-plus-square" @click="incrementCounter(product.id)"></i><i class="fas fa-minus-square" @click="decrementCounter(product.id)"></i></p>
             </div>
@@ -44,32 +44,38 @@
         display:flex;
         flex-direction:column;
         height:460px;
-        width:300px;
+        width:320px;
         background-color:#164fac;
         padding:20px;
     }
 
     .wrapCard .card{
         margin:auto;
-        width:260px;
+        width:285px;
         height:230px;
         border:2px dashed white;
         margin-top:10px;
     }
 
     .wrapCard p{
-        margin:10px;
-    }
-
-    .wrapCard p button{
-        width:20px;
-        height:20px;
-        font-size:15px;
-        line-height:20px;
+        margin:10px 35px 10px 5px;
     }
 
     .continueShopping{
         display:none;
+    }
+    .singleProduct{
+        position:relative;
+    }
+    .fa-plus-square,
+    .fa-minus-square{
+        position:absolute;
+        right:0;
+        bottom:0;
+        font-size:16px;
+    }
+    .fa-plus-square{
+        right:20px;
     }
      @media(max-width:1025px){
         .wrapCard{
@@ -96,6 +102,7 @@
             background-color:#053dac;
             border:1px solid darkgrey;
         }
+
     }
 
     @media(max-width:600px){
