@@ -20,16 +20,16 @@
 
 <style scoped>
     .products{
-        height:calc(100vh - 111px);
+        min-height:calc(100vh - 111px);
         display:flex;
         flex-wrap:wrap;
         justify-content: space-around;
-        align-items: space-between;
+        align-content: space-around;
     }
-        @media(max-width:1000px) and (min-height:1000px){
+
+    @media(max-width:600px){
         .products{
-            min-height:105vh;
-            margin-top:121px;
+            margin-top:65px;
         }
-        }
+    }
 </style>

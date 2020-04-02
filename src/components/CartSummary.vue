@@ -71,88 +71,75 @@
     .continueShopping{
         display:none;
     }
-
-    @media(max-width:1000px){
-        .continueShopping{
-        color:white;
-        font-size:35px;
-        display:block;
-        position:absolute;
-        bottom:30px;
-        right:50px;
-        padding:20px 40px;
-        background-color:#053dac;
-        border:3px solid darkgrey;
-        }
-    }
-
-    @media(max-width:1000px) and (min-height:1000px){
+     @media(max-width:1025px){
         .wrapCard{
-            width:800px;
-            height:1000px;
-            padding:40px;
-        }
-        .wrapCard .card{
-            height:500px;
-            width:700px;
-            margin-top:30px;
-        }
-
-        .wrapCard h2{
-            font-size:50px;
-        }
-        .wrapCard p{
-            font-size:35px;
-            margin:25px;
-        }
-    }
-    @media(max-width:1000px) and (max-height:1000px){
-        .wrapCard{
-            width:400px;
-            height:500px;
+            height:600px;
+            width:70vw;
             padding:30px;
         }
         .wrapCard .card{
-            height:300px;
-            width:300px;
-            margin-top:20px;
+            width:60vw;
+            height:350px;
+        }
+        .wrapCard p{
+            font-size:16px;
         }
 
         .continueShopping{
+            color:white;
             font-size:17px;
-            padding:10px 20px;
+            display:block;
+            position:absolute;
+            bottom:30px;
+            right:40px;
+            padding:10px 7px;
+            background-color:#053dac;
             border:1px solid darkgrey;
-            bottom:20px;
-            right:20px;
         }
     }
 
-     @media(min-width:1024px) and (min-height:1366px){
-            .wrapCard{
-            width:380px;
-            height:600px;
+    @media(max-width:600px){
+        .wrapCard{
+                height:450px;
+                width:90vw;
+                padding:15px;
+            }
+        .wrapCard .card{
+                width:76vw;
+                height:300px;
+            }
+        .wrapCard p{
+                font-size:14px;
+        }
+
+        .continueShopping{
+                font-size:13px;
+                bottom:10px;
+                right:7px;
+                padding:10px 7px;
+                border:1px solid darkgrey;
+        }
+    }
+    @media(max-height:600px) and (orientation:landscape){
+        .wrapCard{
+            height:98vh;
+            width:80vw;
             padding:15px;
-            }
+        }
+        .wrapCard h2{
+            font-size:16px;
+        }
+        .wrapCard p{
+            font-size:13px;
+            margin:7px 10px;
+        }
+        .continueShopping{
+            padding:8px 15px;
+            bottom:5px;
+            right:10px;
+        }
+    }
 
-            .wrapCard .card{
-            height:300px;
-            width:340px;
-            margin-top:20px;
-            }
-
-            .card p {
-            margin:15px 10px;
-            }
-
-            .wrapCard h2{
-            font-size:25px;
-            }
-
-            .wrapCard p{
-            font-size:21px;
-            margin:20px 10px;
-            }
-     }
 </style>
 
 

@@ -7,7 +7,6 @@
         <CartSummary v-if="viewCard"></CartSummary>
     </div>
         <AppProducts class="productsInHome"></AppProducts>
-
 </div>
 </template>
 
@@ -28,7 +27,7 @@
         },
         computed:{
             isMobile(){
-                if(this.windowWidth < 1000 ){
+                if(this.windowWidth < 1025 ){
                     return true
                 }
                 else{
@@ -53,9 +52,9 @@
     }
     .summary{
         flex-basis:30%;
-        height:calc(100vh - 111px);
         display:flex;
         justify-content:center;
+        margin-top:20px;
     }
 
     .productsInHome{
@@ -65,20 +64,32 @@
     .summaryMobile{
         position:fixed;
         z-index:2;
-        top:280px;
-        left:calc(50% - 400px);
+        top:100px;
+        left:calc(50% - 35vw);
     }
 
-        @media(max-width:1000px){
+    @media(max-width:1025px){
         .productsInHome{
         flex-basis:100%;
         }
-        }
-
-        @media(max-width:1000px) and (max-height:1000px){
-        .summaryMobile{
-        top:20%;
-        left:calc(50% - 200px);
     }
+
+    @media(max-width:600px){
+        .summaryMobile{
+            top:10%;
         }
+        .summaryMobile{
+            left:calc(50% - 45vw);
+        }
+    }
+
+    @media(max-height:600px) and (orientation:landscape){
+        .summaryMobile{
+            top:1%;
+        }
+        .summaryMobile{
+            left:calc(50% - 40vw);
+        }
+    }
+
 </style>

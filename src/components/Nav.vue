@@ -41,6 +41,7 @@
         flex-basis:70%;
         display:flex;
         justify-content:flex-end;
+        font-size:18px;
     }
 
     .button{
@@ -56,42 +57,60 @@
         margin-right:80px;
         background-color:#eee;
     }
+    @media(max-width:1024px) and (min-height:1024px){
+        .logo p{
+        font-size:40px;
+        line-height:90px;
+        margin-left: 15%;
+        }
+        .nav{
+            font-size:24px;
+        }
+    }
 
-    @media(max-width:1000px) and (min-height:1000px){
+    @media(max-width:600px){
         .wrapNav{
-            position:fixed;
-            z-index:1;
-            top:0;
-            left:0;
-            width:100%;
-            height:120px;
-            background-color:white;
+        position:fixed;
+        z-index:1;
+        top:0;
+        left:0;
+        width:100%;
+        background-color:white;
+        height:60px;
         }
-        .logo p,
-        .button{
-            line-height:120px;
-        }
-        .bigger{
-            font-size:50px;
-        }
-    }
 
-     @media(max-width:615px){
-        .fas{
-        margin-right:20px;
-        }
-        .button{
-        margin-right:35px;
-    }
-    }
-
-    @media(min-width:1024px) and (min-height:1366px){
-        .wrapNav{
+        .logo p{
             font-size:25px;
+            line-height:60px;
+            margin-left: 15%;
         }
 
         .button{
-        margin-right:60px;
+            line-height:60px;
+            margin-right:30px;
+        }
+
+    .fas{
+        width:60px;
+        margin-right:10px;
+    }
+}
+    @media(max-width:360px){
+        .logo p{
+            font-size:20px;
+        }
+
+        .nav{
+            font-size:15px;
+        }
+
+        .button{
+            margin-right:20px;
+        }
+
+        .fas{
+        margin-right:5px;
         }
     }
+    
 </style>

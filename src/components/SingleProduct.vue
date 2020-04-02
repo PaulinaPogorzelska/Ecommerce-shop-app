@@ -1,6 +1,6 @@
 <template>
 <div class="wrapItem">
-        <div class="imageItem"><img src="../assets/product123.png"></div>
+        <img src="../assets/product123.png">
         <div class="descriptionItem">
             <h3>{{product.name}}</h3>
             <p>{{product.price.toFixed(2)}}</p>
@@ -32,7 +32,7 @@
         margin:0 30px;
     }
 
-    .imageItem img{
+    img{
         width:240px;
         height:240px;
         display:block;
@@ -66,64 +66,82 @@
         border:1.4px solid black;
     }
 
-    @media(max-width:1000px) and (min-height:1000px){
-        .wrapItem{
-            font-size:30px;
-            width:50%;
-            height:calc(50vw + 150px);
-            margin:0;
+    @media(max-width:1024px) and (min-height:1024px){
+        img{
+            width:43vw;
+            height:40vw;
         }
-        .imageItem {
-            width:80%;
-            height:calc(0.8 * 50vw);
-            margin:0 auto;
-        }
-        .imageItem img{
-            width:100%;
-            height:100%;
-        }
+
         .descriptionItem{
-            width:80%;
-            height:150px;
-            margin:0 auto;
+            width:43vw;
+            height:100px;
+        }
+
+        .wrapItem{
+            margin:0 3vw;
+        }
+
+        .descriptionItem h3{
+            font-size:26px;
         }
 
         .descriptionItem p{
-            top:60px;
-        }
-
-        .descriptionItem button{
-            font-size:30px;
-            padding:15px 60px;
-        }
-        }
-
-    @media(min-width:1024px) and (min-height:1366px){
-        .wrapItem{
             font-size:22px;
-            width:50%;
-            margin:0;
-        }
-
-        .imageItem img{
-            width:290px;
-            height:290px;
-            margin:0 auto;
-        }
-
-        .descriptionItem{
-            width:290px;
-            height:110px;
-            margin:0 auto;
+            top:40px;
         }
 
         .descriptionItem button{
-            font-size:20px;
-            padding:10px 50px;
+            font-size:24px;
+            padding:5px 45px;
+        }
+    }
+
+    @media(max-width:600px){
+        img{
+        width:43vw;
+        height:40vw;
         }
 
+        .descriptionItem{
+        width:43vw;
+        height:70px;
+        }
+
+        .wrapItem{
+        margin:0 3vw;
+        }
+
+        .descriptionItem h3{
+        top:5px;
+        left:5px;
+        font-size:17px;
+        }
+        
         .descriptionItem p{
-        top:40px;
+        top:25px;
+        font-size:15px;
+        }
+
+        .descriptionItem button{
+        bottom:10px;
+        right:5px;
+        padding:5px 23px;
+        }
+    }
+
+    @media(max-width:360px){
+        .descriptionItem h3{
+        font-size:13px;
+        }
+        
+        .descriptionItem p{
+        font-size:12px;
+        }
+
+        .descriptionItem button{
+        bottom:15px;
+        right:5px;
+        padding:3px 20px;
         }
     }
 </style>
