@@ -83,20 +83,13 @@ export default{
         opacity:1;
     }
     
-    @media(min-width:979px) and (min-height:1306px){
-        .wrapSlide{
-            margin-top:121px;
-            font-size:35px;
-        }
-         .aboutDescription p{
-             line-height:40px;
-         }
-    }
-
-
-    @media(max-width:1000px) and (min-height:1367px){
-        .wrapSlide{
-            margin-top:121px;
+   @media(max-width:1025px){
+       
+       .aboutHeader{
+        width:90%;
+        height:60px;
+        line-height:60px;
+        padding:0 30px;
         }
 
         .aboutDescription,
@@ -104,32 +97,45 @@ export default{
             display:block;
         }
 
-        .aboutDescription p{
-            font-size:22px;
-            line-height:26px;
-        }
-
         .aboutDescription img{
+            height:30vw;
             float:left;
-            height:290px;
-            margin:30px;
+            margin:15px;
         }
 
         .wrapSlide:nth-child(even) .aboutDescription img{
-            float:right;
+                float:right;
         }
 
-        .aboutHeader{
-        height:120px;
-        line-height:120px;
-        font-size:32px;
+        .wrapSlide h1{
+            font-size:28px;
+        }
+
+        .before-enter{
+            opacity:0.5;
+            transform:translateX(10px);
+            transition:all 2s ease-out;
+        }
+        .enter{
+            transform:translateX(0px);
+            opacity:1;
+        }
+
+        .wrapSlide:nth-child(even) .before-enter{
+            opacity:0.5;
+            transform:translateX(-10px);
+            transition:all 2s ease-out;
+        }
+
+        .wrapSlide:nth-child(even) .enter{
+            transform:translateX(0px);
+            opacity:1;
         }
     }
 
-    @media(min-width:1024px) and (min-height:1306px){
+    @media(max-width:600px){
         .wrapSlide{
-            margin-top:50px;
-            font-size:30px;
+            margin-top:60px;
         }
     }
 
