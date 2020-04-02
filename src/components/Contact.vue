@@ -58,7 +58,6 @@
     display:flex;
     flex-wrap:wrap;
     width:65%;
-    height:75%;
     background-color:#045cd0;
     border-radius:10px;
     box-shadow:0 0 20px 10px #053dac
@@ -110,6 +109,7 @@
 .questContact textarea{
     resize: none;
     border-radius:3px;
+    margin-bottom:20px;
 }
 
 .questContact button{
@@ -162,11 +162,11 @@
     }
 }
 
-@media(max-width:1000px){
+@media(max-width:1025px){
+
     .infoContact{
         display:block;
         width:70%;
-        height:85%;
     }
 
     .boxContact{
@@ -203,6 +203,39 @@
 
     .questContact button{
         right:7%;
+    }
+}
+
+@media(max-width:1025px) and (max-height:600px){
+    .wrapContact{
+        height:auto;
+        padding:20px 0;
+    }
+}
+
+@media(max-width:600px){
+        .wrapContact{
+        height:auto;
+        margin-top: 60px;
+        padding:20px 0;
+    }
+    .infoContact{
+        display:block;
+        width:90%;
+    }
+
+    .questContact textarea{
+        margin-bottom:30px;
+        width:100%;
+    }
+
+    .questContact button{
+        bottom:7px;
+        right:calc(90% - 100px);
+    }
+
+    .questContact input{
+        width:90%;
     }
 }
 </style>
